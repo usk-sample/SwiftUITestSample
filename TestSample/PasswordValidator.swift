@@ -8,7 +8,7 @@
 import Foundation
 
 func validate(password: String) -> Bool {
-    if password.count <= 7 { return false }
-
-    return true
+    if password.count < 8 { return false }
+    let numericString = password.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+    return numericString.count >= 2
 }
