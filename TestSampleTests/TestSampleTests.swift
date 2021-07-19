@@ -9,6 +9,18 @@ import XCTest
 
 @testable import TestSample
 
+class StubViewModel: ViewModelProtocol {
+    @Published var lastQuery: String?
+    @Published var shouldShowErrorAlert: Bool = false
+    @Published var moreSearchResultsExist: Bool = false
+    
+    func search(query: String) {
+        
+    }
+    
+}
+
+
 class TestSampleTests: XCTestCase {
 
     override class func setUp() {
@@ -47,6 +59,13 @@ class TestSampleTests: XCTestCase {
         
     }
 
+    func testViewModel() throws {
+        
+        let view = ContentView.init(viewModel: StubViewModel())
+        debugPrint(view)
+        
+    }
+    
 //    func testPerformanceExample() throws {
 //        // This is an example of a performance test case.
 //        measure {

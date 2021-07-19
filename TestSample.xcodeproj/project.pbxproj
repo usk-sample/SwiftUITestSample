@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		A813F4CA26A4FF0100EF73EA /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813F4C926A4FF0100EF73EA /* PasswordValidator.swift */; };
 		A813F4CC26A5041900EF73EA /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813F4CB26A5041800EF73EA /* Math.swift */; };
 		A813F4CE26A50B4100EF73EA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813F4CD26A50B4100EF73EA /* ViewModel.swift */; };
+		A813F4D126A510CF00EF73EA /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D026A510CF00EF73EA /* Quick */; };
+		A813F4D426A5110700EF73EA /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D326A5110700EF73EA /* Nimble */; };
+		A813F4D726A5115400EF73EA /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D626A5115400EF73EA /* OHHTTPStubsSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A813F4D126A510CF00EF73EA /* Quick in Frameworks */,
+				A813F4D726A5115400EF73EA /* OHHTTPStubsSwift in Frameworks */,
+				A813F4D426A5110700EF73EA /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +197,11 @@
 				A813F4C526A4F9B700EF73EA /* PBXTargetDependency */,
 			);
 			name = TestSampleTests;
+			packageProductDependencies = (
+				A813F4D026A510CF00EF73EA /* Quick */,
+				A813F4D326A5110700EF73EA /* Nimble */,
+				A813F4D626A5115400EF73EA /* OHHTTPStubsSwift */,
+			);
 			productName = TestSampleTests;
 			productReference = A813F4BF26A4F9B700EF73EA /* TestSampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -226,6 +237,11 @@
 				Base,
 			);
 			mainGroup = A813F49226A4F37C00EF73EA;
+			packageReferences = (
+				A813F4CF26A510CF00EF73EA /* XCRemoteSwiftPackageReference "Quick" */,
+				A813F4D226A5110700EF73EA /* XCRemoteSwiftPackageReference "Nimble" */,
+				A813F4D526A5115400EF73EA /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+			);
 			productRefGroup = A813F49C26A4F37C00EF73EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -580,6 +596,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A813F4CF26A510CF00EF73EA /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		A813F4D226A5110700EF73EA /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.2.0;
+			};
+		};
+		A813F4D526A5115400EF73EA /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A813F4D026A510CF00EF73EA /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A813F4CF26A510CF00EF73EA /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		A813F4D326A5110700EF73EA /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A813F4D226A5110700EF73EA /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		A813F4D626A5115400EF73EA /* OHHTTPStubsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A813F4D526A5115400EF73EA /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A813F49326A4F37C00EF73EA /* Project object */;
 }
