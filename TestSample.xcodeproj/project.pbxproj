@@ -14,6 +14,7 @@
 		A813F4B426A4F9A100EF73EA /* TestSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813F4B326A4F9A100EF73EA /* TestSampleUITests.swift */; };
 		A813F4C226A4F9B700EF73EA /* TestSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813F4C126A4F9B700EF73EA /* TestSampleTests.swift */; };
 		A813F4CA26A4FF0100EF73EA /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813F4C926A4FF0100EF73EA /* PasswordValidator.swift */; };
+		A813F4CC26A5041900EF73EA /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813F4CB26A5041800EF73EA /* Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A813F4C126A4F9B700EF73EA /* TestSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSampleTests.swift; sourceTree = "<group>"; };
 		A813F4C326A4F9B700EF73EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A813F4C926A4FF0100EF73EA /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		A813F4CB26A5041800EF73EA /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				A813F49E26A4F37C00EF73EA /* TestSampleApp.swift */,
 				A813F4A026A4F37C00EF73EA /* ContentView.swift */,
 				A813F4C926A4FF0100EF73EA /* PasswordValidator.swift */,
+				A813F4CB26A5041800EF73EA /* Math.swift */,
 				A813F4A226A4F37D00EF73EA /* Assets.xcassets */,
 				A813F4A726A4F37D00EF73EA /* Info.plist */,
 				A813F4A426A4F37D00EF73EA /* Preview Content */,
@@ -265,6 +268,7 @@
 				A813F4A126A4F37C00EF73EA /* ContentView.swift in Sources */,
 				A813F4CA26A4FF0100EF73EA /* PasswordValidator.swift in Sources */,
 				A813F49F26A4F37C00EF73EA /* TestSampleApp.swift in Sources */,
+				A813F4CC26A5041900EF73EA /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

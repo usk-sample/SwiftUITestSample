@@ -36,6 +36,16 @@ class TestSampleTests: XCTestCase {
             }
         }
     }
+    
+    func testDivide() throws {
+        
+        //XCTContxtは使えない
+        XCTAssertThrowsError(try divide(3, y: 0)) { error in
+            let error = error as? OperationError
+            XCTAssertEqual(error, OperationError.divisionByZero)
+        }
+        
+    }
 
 //    func testPerformanceExample() throws {
 //        // This is an example of a performance test case.
