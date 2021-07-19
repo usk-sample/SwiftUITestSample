@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct ContentView<ViewModel: ViewModelProtocol>: View {
+struct ContentView: View {
     
-    @ObservedObject var viewModel: ViewModel
+    @State var count: Int = 0
     
     var body: some View {
         Text("Hello, world!")
             .padding()
-    }
+    }    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView.init(viewModel: ViewModel())
+        ContentView()
     }
 }

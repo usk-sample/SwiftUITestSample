@@ -7,6 +7,8 @@
 
 import XCTest
 
+@testable import TestSample
+
 class TestSampleUITests: XCTestCase {
 
     override func setUpWithError() throws {

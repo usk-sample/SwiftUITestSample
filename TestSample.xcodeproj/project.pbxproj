@@ -19,6 +19,7 @@
 		A813F4D126A510CF00EF73EA /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D026A510CF00EF73EA /* Quick */; };
 		A813F4D426A5110700EF73EA /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D326A5110700EF73EA /* Nimble */; };
 		A813F4D726A5115400EF73EA /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D626A5115400EF73EA /* OHHTTPStubsSwift */; };
+		A813F4DA26A5628F00EF73EA /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D926A5628F00EF73EA /* ViewInspector */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A813F4DA26A5628F00EF73EA /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +181,9 @@
 				A813F4B726A4F9A100EF73EA /* PBXTargetDependency */,
 			);
 			name = TestSampleUITests;
+			packageProductDependencies = (
+				A813F4D926A5628F00EF73EA /* ViewInspector */,
+			);
 			productName = TestSampleUITests;
 			productReference = A813F4B126A4F9A100EF73EA /* TestSampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -241,6 +246,7 @@
 				A813F4CF26A510CF00EF73EA /* XCRemoteSwiftPackageReference "Quick" */,
 				A813F4D226A5110700EF73EA /* XCRemoteSwiftPackageReference "Nimble" */,
 				A813F4D526A5115400EF73EA /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+				A813F4D826A5628F00EF73EA /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = A813F49C26A4F37C00EF73EA /* Products */;
 			projectDirPath = "";
@@ -622,6 +628,14 @@
 				minimumVersion = 9.1.0;
 			};
 		};
+		A813F4D826A5628F00EF73EA /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -639,6 +653,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A813F4D526A5115400EF73EA /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
 			productName = OHHTTPStubsSwift;
+		};
+		A813F4D926A5628F00EF73EA /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A813F4D826A5628F00EF73EA /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

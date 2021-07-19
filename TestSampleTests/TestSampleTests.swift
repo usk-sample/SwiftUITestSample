@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Quick
 
 @testable import TestSample
 
@@ -19,7 +20,6 @@ class StubViewModel: ViewModelProtocol {
     }
     
 }
-
 
 class TestSampleTests: XCTestCase {
 
@@ -63,6 +63,8 @@ class TestSampleTests: XCTestCase {
         
         let view = ContentView.init(viewModel: StubViewModel())
         debugPrint(view)
+        
+        
         
     }
     
