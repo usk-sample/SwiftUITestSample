@@ -9,6 +9,6 @@ import Foundation
 
 func validate(password: String) -> Bool {
     if password.count <= 7 { return false }
-    
+
     return true
 }
