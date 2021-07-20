@@ -32,6 +32,8 @@ class TestSampleUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
+        //TODO: record snapshot
+        
     }
 
 //    func testLaunchPerformance() throws {

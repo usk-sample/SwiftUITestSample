@@ -44,7 +44,7 @@ class TestSampleTests: XCTestCase {
     
     func testDivide() throws {
         
-        try XCTContext.runActivity(named: "normal case") { _ in            
+        try XCTContext.runActivity(named: "normal case") { _ in
             XCTAssertEqual(try divide(4, y: 2), 2)
             XCTAssertEqual(try divide(3, y: 2), 1)
         }
@@ -60,20 +60,31 @@ class TestSampleTests: XCTestCase {
 
     func testViewModel() throws {
         
-        let view = ContentView()
+                
         try XCTContext.runActivity(named: "static string") { _ in
+            let view = ContentView(viewModel: .init(count: 0))
             let text = try view.inspect().vStack().text(0).string()
             XCTAssertEqual(text, "Hello, world!")
         }
 
         try XCTContext.runActivity(named: "dynamic string") { _ in
-            
+            let view = ContentView(viewModel: .init(count: 0))
             var count = try view.inspect().vStack().text(1).string()
             XCTAssertEqual(count, "0")
             
             try view.inspect().vStack().button(2).tap()
             count = try view.inspect().vStack().text(1).string()
-            XCTAssertEqual(count, "0")
+            XCTAssertEqual(count, "1")
+        }
+        
+        try XCTContext.runActivity(named: "dynamic string with initial value") { _ in
+            let view = ContentView(viewModel: .init(count: 5))
+            var count = try view.inspect().vStack().text(1).string()
+            XCTAssertEqual(count, "5")
+            
+            try view.inspect().vStack().button(2).tap()
+            count = try view.inspect().vStack().text(1).string()
+            XCTAssertEqual(count, "6")
         }
         
     }

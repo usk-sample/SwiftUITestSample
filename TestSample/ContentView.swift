@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var count: Int = 0
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         VStack {
             Text("Hello, world!")
                 .padding()
-            Text("\(count)")
+            Text("\(self.viewModel.count)")
             Button.init("Increment") {
-                self.count += 1
+                self.viewModel.increment()
             }
         }
         
@@ -27,6 +27,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: .init(count: 0))
     }
 }
