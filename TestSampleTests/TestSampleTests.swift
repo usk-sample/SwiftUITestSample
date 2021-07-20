@@ -45,6 +45,11 @@ class TestSampleTests: XCTestCase {
             try view.inspect().vStack().button(2).tap()
             count = try view.inspect().vStack().text(1).string()
             XCTAssertEqual(count, "1")
+            
+            try view.inspect().find(button: "Increment").tap()
+            count = try view.inspect().find(viewWithTag: 5).text().string()
+            XCTAssertEqual(count, "2")
+            
         }
         
         try XCTContext.runActivity(named: "dynamic string with initial value") { _ in

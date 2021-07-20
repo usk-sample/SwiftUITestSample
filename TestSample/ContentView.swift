@@ -16,6 +16,7 @@ struct ContentView: View {
             Text("Hello, world!")
                 .padding()
             Text("\(self.viewModel.count)")
+                .tag(5)
             Button.init("Increment") {
                 self.viewModel.increment()
             }
