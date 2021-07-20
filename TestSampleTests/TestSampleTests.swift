@@ -27,37 +27,7 @@ class TestSampleTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func test_パスワードバリデーションの文字数() throws {
-        XCTContext.runActivity(named: "数字が２文字以上含まれている場合") { _ in
-            XCTContext.runActivity(named: "合計７文字が入力された場合") { _ in
-                XCTAssertFalse(validate(password: "abcde12"))
-            }
-            XCTContext.runActivity(named: "合計８文字が入力された場合") { _ in
-                XCTAssertTrue(validate(password: "abcdef12"))
-            }
-            XCTContext.runActivity(named: "合計９文字が入力された場合") { _ in
-                XCTAssertTrue(validate(password: "abcdefg12"))
-            }
-        }
-    }
     
-    func testDivide() throws {
-        
-        try XCTContext.runActivity(named: "normal case") { _ in
-            XCTAssertEqual(try divide(4, y: 2), 2)
-            XCTAssertEqual(try divide(3, y: 2), 1)
-        }
-        
-        try XCTContext.runActivity(named: "error case") { _ in
-            XCTAssertThrowsError(try divide(3, y: 0)) { error in
-                let error = error as? OperationError
-                XCTAssertEqual(error, OperationError.divisionByZero)
-            }
-        }
-        
-    }
-
     func testViewModel() throws {
         
                 
@@ -85,6 +55,36 @@ class TestSampleTests: XCTestCase {
             try view.inspect().vStack().button(2).tap()
             count = try view.inspect().vStack().text(1).string()
             XCTAssertEqual(count, "6")
+        }
+        
+    }
+
+    func test_パスワードバリデーションの文字数() throws {
+        XCTContext.runActivity(named: "数字が２文字以上含まれている場合") { _ in
+            XCTContext.runActivity(named: "合計７文字が入力された場合") { _ in
+                XCTAssertFalse(validate(password: "abcde12"))
+            }
+            XCTContext.runActivity(named: "合計８文字が入力された場合") { _ in
+                XCTAssertTrue(validate(password: "abcdef12"))
+            }
+            XCTContext.runActivity(named: "合計９文字が入力された場合") { _ in
+                XCTAssertTrue(validate(password: "abcdefg12"))
+            }
+        }
+    }
+    
+    func testDivide() throws {
+        
+        try XCTContext.runActivity(named: "normal case") { _ in
+            XCTAssertEqual(try divide(4, y: 2), 2)
+            XCTAssertEqual(try divide(3, y: 2), 1)
+        }
+        
+        try XCTContext.runActivity(named: "error case") { _ in
+            XCTAssertThrowsError(try divide(3, y: 0)) { error in
+                let error = error as? OperationError
+                XCTAssertEqual(error, OperationError.divisionByZero)
+            }
         }
         
     }
