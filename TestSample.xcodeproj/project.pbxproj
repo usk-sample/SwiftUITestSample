@@ -20,6 +20,7 @@
 		A813F4D426A5110700EF73EA /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D326A5110700EF73EA /* Nimble */; };
 		A813F4D726A5115400EF73EA /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D626A5115400EF73EA /* OHHTTPStubsSwift */; };
 		A813F4DA26A5628F00EF73EA /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4D926A5628F00EF73EA /* ViewInspector */; };
+		A813F4DF26A5651900EF73EA /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A813F4DE26A5651900EF73EA /* ViewInspector */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 				A813F4D126A510CF00EF73EA /* Quick in Frameworks */,
 				A813F4D726A5115400EF73EA /* OHHTTPStubsSwift in Frameworks */,
 				A813F4D426A5110700EF73EA /* Nimble in Frameworks */,
+				A813F4DF26A5651900EF73EA /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +95,7 @@
 				A813F4B226A4F9A100EF73EA /* TestSampleUITests */,
 				A813F4C026A4F9B700EF73EA /* TestSampleTests */,
 				A813F49C26A4F37C00EF73EA /* Products */,
+				A813F4DB26A564BE00EF73EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +150,13 @@
 			path = TestSampleTests;
 			sourceTree = "<group>";
 		};
+		A813F4DB26A564BE00EF73EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +173,8 @@
 			dependencies = (
 			);
 			name = TestSample;
+			packageProductDependencies = (
+			);
 			productName = TestSample;
 			productReference = A813F49B26A4F37C00EF73EA /* TestSample.app */;
 			productType = "com.apple.product-type.application";
@@ -206,6 +218,7 @@
 				A813F4D026A510CF00EF73EA /* Quick */,
 				A813F4D326A5110700EF73EA /* Nimble */,
 				A813F4D626A5115400EF73EA /* OHHTTPStubsSwift */,
+				A813F4DE26A5651900EF73EA /* ViewInspector */,
 			);
 			productName = TestSampleTests;
 			productReference = A813F4BF26A4F9B700EF73EA /* TestSampleTests.xctest */;
@@ -655,6 +668,11 @@
 			productName = OHHTTPStubsSwift;
 		};
 		A813F4D926A5628F00EF73EA /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A813F4D826A5628F00EF73EA /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+		A813F4DE26A5651900EF73EA /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A813F4D826A5628F00EF73EA /* XCRemoteSwiftPackageReference "ViewInspector" */;
 			productName = ViewInspector;

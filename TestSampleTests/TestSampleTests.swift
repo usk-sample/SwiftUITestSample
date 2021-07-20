@@ -6,20 +6,13 @@
 //
 
 import XCTest
+
 import Quick
+import ViewInspector
 
 @testable import TestSample
 
-class StubViewModel: ViewModelProtocol {
-    @Published var lastQuery: String?
-    @Published var shouldShowErrorAlert: Bool = false
-    @Published var moreSearchResultsExist: Bool = false
-    
-    func search(query: String) {
-        
-    }
-    
-}
+extension ContentView: Inspectable { }
 
 class TestSampleTests: XCTestCase {
 
@@ -51,20 +44,37 @@ class TestSampleTests: XCTestCase {
     
     func testDivide() throws {
         
-        //XCTContxtは使えない
-        XCTAssertThrowsError(try divide(3, y: 0)) { error in
-            let error = error as? OperationError
-            XCTAssertEqual(error, OperationError.divisionByZero)
+        try XCTContext.runActivity(named: "normal case") { _ in            
+            XCTAssertEqual(try divide(4, y: 2), 2)
+            XCTAssertEqual(try divide(3, y: 2), 1)
+        }
+        
+        try XCTContext.runActivity(named: "error case") { _ in
+            XCTAssertThrowsError(try divide(3, y: 0)) { error in
+                let error = error as? OperationError
+                XCTAssertEqual(error, OperationError.divisionByZero)
+            }
         }
         
     }
 
     func testViewModel() throws {
         
-        let view = ContentView.init(viewModel: StubViewModel())
-        debugPrint(view)
-        
-        
+        let view = ContentView()
+        try XCTContext.runActivity(named: "static string") { _ in
+            let text = try view.inspect().vStack().text(0).string()
+            XCTAssertEqual(text, "Hello, world!")
+        }
+
+        try XCTContext.runActivity(named: "dynamic string") { _ in
+            
+            var count = try view.inspect().vStack().text(1).string()
+            XCTAssertEqual(count, "0")
+            
+            try view.inspect().vStack().button(2).tap()
+            count = try view.inspect().vStack().text(1).string()
+            XCTAssertEqual(count, "0")
+        }
         
     }
     
