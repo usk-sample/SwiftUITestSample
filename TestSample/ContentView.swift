@@ -12,16 +12,21 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
-            Text("\(self.viewModel.count)")
-                .tag(5)
-            Button.init("Increment") {
-                self.viewModel.increment()
+        NavigationView {
+            VStack(spacing: 16) {
+                Text("Hello, world!")
+                Text("\(self.viewModel.count)")
+                    .tag(5)
+                    .accessibilityIdentifier("count_label")
+                Button.init("Increment") {
+                    self.viewModel.increment()
+                }
+                NavigationLink.init("Next", destination: Text("Detail View"))
+                    .accessibilityIdentifier("next_button")
             }
+            
         }
-        
+
     }    
     
 }

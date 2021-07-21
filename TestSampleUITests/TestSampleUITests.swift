@@ -28,11 +28,36 @@ class TestSampleUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        //TODO: record snapshot
+        let texts = app.staticTexts
+        debugPrint("static texts : \(texts.count)")
+        
+        debugPrint("----- boundBy: 0")
+        debugPrint(texts.element(boundBy: 0))
+        debugPrint("----- boundBy: 1")
+        debugPrint(texts.element(boundBy: 1))
+        
+        debugPrint(app.staticTexts["count_label"])
+        debugPrint(app.staticTexts["count_label"].label)
+
+        XCTAssertEqual(app.staticTexts["count_label"].label, "0")
+        
+        debugPrint(app.buttons.firstMatch)
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.staticTexts["count_label"].label, "1")
+        
+        add(XCTAttachment.init(screenshot: app.screenshot()))
+        add(XCTAttachment.init(screenshot: app.staticTexts["count_label"].screenshot()))
+
+    }
+    
+    func testNavigationLink() throws {
+        //画面遷移のテスト
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["next_button"].tap()
+        add(XCTAttachment.init(screenshot: app.screenshot()))
         
     }
 
