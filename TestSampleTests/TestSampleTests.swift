@@ -7,7 +7,6 @@
 
 import XCTest
 
-import Quick
 import ViewInspector
 
 @testable import TestSample
@@ -41,7 +40,7 @@ class TestSampleTests: XCTestCase {
             let view = ContentView(viewModel: .init(count: 0))
             var count = try view.inspect().vStack().text(1).string()
             XCTAssertEqual(count, "0")
-            
+                        
             try view.inspect().vStack().button(2).tap()
             count = try view.inspect().vStack().text(1).string()
             XCTAssertEqual(count, "1")
